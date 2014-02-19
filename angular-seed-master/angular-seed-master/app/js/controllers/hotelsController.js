@@ -1,5 +1,9 @@
 myApp.controller('MyCtrl1', function($scope) {
 
+	$scope.updaVote = function (hotel){
+		hotel.rating ++;
+	};
+
 	$scope.hotels = [
 	{
 		name : 'Lalit Ashok',
