@@ -2,10 +2,12 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', []).
-  controller('MyCtrl1', [function() {
+myApp.controller('MyCtrl1', function($scope) {
 
-  }])
-  .controller('MyCtrl2', [function() {
+	$scope.hotels = [
+	{
+		name = 'Lalit Ashok',
+		location = 'Delhi'
+	}]
 
-  }]);
+  });
