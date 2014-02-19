@@ -37,13 +37,19 @@
     </div><!-- /.container-fluid -->
   </nav>
 
-  <div ng-controller="MyCtrl1">
+  <div ng-controller="MyCtrl1" class="container">
 
-  <h1>Hotels</h1>
+    <h1>Hotels</h1>
 
-  <div ng-repeat="hotel in hotels">{{hotel.name}}</div>
-
-  </div>
+    <div ng-repeat="hotel in hotels" class="well">
+      <div class="row">
+        <div class="col-md-3" >
+          <div><img style="width:200px; height:100px" ng-src="{{hotel.image}}" /></div>
+        </div>
+        <div class="col-md-9" >
+        <div><h3>{{hotel.name}}<h3></div></div>
+        </div>
+      </div>
 
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
