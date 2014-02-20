@@ -1,0 +1,14 @@
+{
+"name" : "Lalit  Ashok",
+"location" : "Delhi",
+"rating": 5,
+"image": "img/ashok.jpg",
+"dailyRate" : 350,
+"facilities" : ["gym", "spa"],
+"reviews" : 
+		[{
+		"author" : "abhinav",
+		"rating" : "7",
+		"comments" : "OK place"
+		}]
+}

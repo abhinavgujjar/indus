@@ -23,6 +23,7 @@
   <hr/>
 
   <div ng-repeat="hotel in hotels | filter:searchTerm | orderBy:orderSelection: true" class=" row well">
+    <a href="#/details/{{hotel.rating}}">
     <div class="row">
       <div class="col-md-2" >
         <div>
@@ -44,12 +45,16 @@
       <div class="col-md-3" >
         <div><img style="width:200px; height:100px" ng-src="{{hotel.image}}" /></div>
       </div>
-      <div class="col-md-6" >
+      <div class="col-md-3" >
         <div><span class="h3">{{hotel.name }}</span></div>
         <div>{{hotel.dailyRate | toRupees | categories | uppercase}}</div>
         <div ng-bind-html="hotel.location"></div>
 
         <div ng-repeat="review in hotel.reviews" class="row">{{review.comment}}</div>
       </div>
+      <div class="col-md-3" >
+        <ticks items="hotel.facilities" />
+      </div>
     </div>
+    </a>
   </div>

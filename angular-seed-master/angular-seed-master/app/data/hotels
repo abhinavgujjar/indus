@@ -1,38 +1,44 @@
 [
 		{
+
 			"name" : "Lalit  Ashok",
 			"location" : "Delhi",
 			"rating": 5,
 			"image": "img/ashok.jpg",
-			"dailyRate" : 350
+			"dailyRate" : 350,
+			"facilities" : ["gym", "spa"]
 		},
 		{
 			"name": "Hyatt Regency",
 			"location": "Mumbai",
 			"rating": 10,
 			"image": "img/hyatt.jpg",
-			"dailyRate" : 500
+			"dailyRate" : 500,
+			"facilities" : ["wifi", "pool", "spa"]
 		},
 		{
 			"name": "Taj Residency",
 			"location": "New Delhi",
 			"rating" : 3,
 			"image": "img/taj.jpg",
-			"dailyRate" : 350
+			"dailyRate" : 350,
+			"facilities" : ["gym", "spa"]
 		},
 		{
 			"name": "Country Inn",
 			"location": "Dubai",
 			"rating": 7,
 			"image": "img/countryinn.jpg",
-			"dailyRate" : 700
+			"dailyRate" : 700,
+			"facilities" : ["gym", "spa"]
 		},
 		{
 			"name": "Royal Orchid",
 			"location": "Bangalore",
 			"rating": 2,
 			"image": "img/royalorchid.jpg",
-			"dailyRate" : 200
+			"dailyRate" : 200,
+			"facilities" : ["gym", "spa"]
 		},
 		{
 			"name": "Radisson",
