@@ -1,4 +1,4 @@
-myApp.controller('MyCtrl1', function($scope) {
+myApp.controller('MyCtrl1', function($scope, hotelDataProvider) {
 	$scope.upVote = function (hotel){
 		hotel.rating ++;
 	};
@@ -7,49 +7,6 @@ myApp.controller('MyCtrl1', function($scope) {
 		hotel.rating--;
 	};
 
-	$scope.hotels = [
-	{
-		name : 'Lalit Ashok',
-		location : '<i>Delhi</i><script>alert("BOO");</script>',
-		rating: 5,
-		image: 'img/ashok.jpg',
-		dailyRate : 350
-	},
-	{
-		name: 'Hyatt Regency',
-		lcoation: 'Mumbai',
-		rating: 10,
-		image: 'img/hyatt.jpg',
-		dailyRate : 500
-	},
-	{
-		name: 'Taj Residency',
-		location: 'New Delhi',
-		rating : 3,
-		image: 'img/taj.jpg',
-		dailyRate : 350
-	},
-	{
-		name: 'Country Inn',
-		lcoation: 'Dubai',
-		rating: 7,
-		image: 'img/countryinn.jpg',
-		dailyRate : 700
-	},
-	{
-		name: 'Royal Orchid',
-		lcoation: 'Bangalore',
-		rating: 2,
-		image: 'img/royalorchid.jpg',
-		dailyRate : 200
-	},
-	{
-		name: 'Radisson',
-		lcoation: 'Mumbai',
-		rating: 3,
-		image: 'img/radisson.jpg',
-		dailyRate : 1000
-	}
-	]
+	$scope.hotels = hotelDataProvider.getHotels();
 }
 );

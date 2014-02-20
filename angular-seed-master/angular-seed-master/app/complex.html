@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+  <meta charset="utf-8">
+  <title>My AngularJS App</title>
+  <link rel="stylesheet" href="css/bootstrap.css"/>
+</head>
+<body ng-cloak>
+
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Travel Tripper</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Hotels</a></li>
+          <li><a href="#">Flights</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <div ng-controller="complexCtrl" class="container">
+    <form role="form">
+      <input type="text" ng-disabled="allowNameInput"/>
+      <input type="checkbox" />
+<div>
+
+   <select class="form-control" ng-disabled="pageState === 'loading'">
+        <option>India</option>
+        <option>Iran</option>
+      </select>
+
+</div>
+      <br/>
+      <br/>
+      <button ng-click="startLoading()" class="btn btn-default" >start</button>
+      <button ng-click="cancel()" class="btn btn-default" >cancel</button>
+
+<br/>
+<br/>
+<button class="btn btn-danger" ng-click="begin()" >Begin</button>
+
+    </form>
+
+  </div>
+
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular/angular-sanitize.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers/complexController.js"></script>
+  <script src="js/filters.js"></script>
+</body>
+</html>

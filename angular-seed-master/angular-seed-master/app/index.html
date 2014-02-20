@@ -20,59 +20,71 @@
           <li class="active"><a href="#">Hotels</a></li>
           <li><a href="#">Flights</a></li>
         </ul>
-        =      </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
 
-    <div ng-controller="MyCtrl1" class="container">
+  <div ng-controller="MyCtrl1" class="container">
 
-      <div class="row">
-        <div class="col-md-6">
-          <div class="input-group">
-            <span class="input-group-addon">Search</span>
-            <input type="text" class="form-control" ng-model="searchTerm" placeholder="enter name...">
-          </div>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="input-group">
+          <span class="input-group-addon">Search</span>
+          <input type="text" class="form-control" ng-model="searchTerm" placeholder="enter name..." />
         </div>
-        <div class="col-md-6"><button class="btn btn-success pull-right" >New Hotel</button></div>
       </div>
-      <br/>
-      <hr/>
+      <div class="col-md-3">
+        <div class="input-group">
+          <span class="input-group-addon">Order</span>
+          <select  ng-model="orderSelection" class="form-control">
+            <option value='name'>Name</option>
+            <option value='rating'>Rating</option>
+          </select>
 
-      <div ng-repeat="hotel in hotels | filter:searchTerm | orderBy:'rating': true" class=" row well">
-        <div class="row">
-          <div class="col-md-2" >
-            <div>
-              <button class="btn btn-xs btn-default" ng-click="upVote(hotel)">
-                <span class="glyphicon glyphicon-chevron-up"></span>
-              </button>
-            </div>
-            <div>
-              <h4>
-                <span class="label label-info">{{hotel.rating}}</span>
-              </h4>
-            </div>
-            <div>
-              <button class="btn btn-xs btn-default" ng-click="downVote(hotel)">
-                <span class="glyphicon glyphicon-chevron-down"></span>
-              </button>
-            </div>
-          </div>
-          <div class="col-md-3" >
-            <div><img style="width:200px; height:100px" ng-src="{{hotel.image}}" /></div>
-          </div>
-          <div class="col-md-6" >
-            <div><span class="h3">{{hotel.name }}</span></div>
-            <div>{{hotel.dailyRate | toRupees | categories | uppercase}}</div>
-            <div ng-bind-html="hotel.location"></div>
+        </div>
+      </div>
+      <div class="col-md-6"><button class="btn btn-success pull-right" >New Hotel</button></div>
+    </div>
+    <br/>
+    <hr/>
 
-            <div ng-repeat="review in hotel.reviews" class="row">{{review.comment}}</div>
+    <div ng-repeat="hotel in hotels | filter:searchTerm | orderBy:orderSelection: true" class=" row well">
+      <div class="row">
+        <div class="col-md-2" >
+          <div>
+            <button class="btn btn-xs btn-default" ng-click="upVote(hotel)">
+              <span class="glyphicon glyphicon-chevron-up"></span>
+            </button>
+          </div>
+          <div>
+            <h4>
+              <span class="label label-info">{{hotel.rating}}</span>
+            </h4>
+          </div>
+          <div>
+            <button class="btn btn-xs btn-default" ng-click="downVote(hotel)">
+              <span class="glyphicon glyphicon-chevron-down"></span>
+            </button>
           </div>
         </div>
+        <div class="col-md-3" >
+          <div><img style="width:200px; height:100px" ng-src="{{hotel.image}}" /></div>
+        </div>
+        <div class="col-md-6" >
+          <div><span class="h3">{{hotel.name }}</span></div>
+          <div>{{hotel.dailyRate | toRupees | categories | uppercase}}</div>
+          <div ng-bind-html="hotel.location"></div>
 
-        <script src="lib/angular/angular.js"></script>
-        <script src="lib/angular/angular-sanitize.js"></script>
-        <script src="js/app.js"></script>
-        <script src="js/controllers/hotelsController.js"></script>
-        <script src="js/filters.js"></script>
-      </body>
-      </html>
+          <div ng-repeat="review in hotel.reviews" class="row">{{review.comment}}</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular/angular-sanitize.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/hotelsController.js"></script>
+    <script src="js/services/hotelDataProvider.js"></script>
+    <script src="js/filters.js"></script>
+  </body>
+  </html>
