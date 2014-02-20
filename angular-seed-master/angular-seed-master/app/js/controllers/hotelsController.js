@@ -1,7 +1,10 @@
 myApp.controller('MyCtrl1', function($scope) {
-
-	$scope.updaVote = function (hotel){
+	$scope.upVote = function (hotel){
 		hotel.rating ++;
+	};
+
+	$scope.downVote = function (hotel){
+		hotel.rating--;
 	};
 
 	$scope.hotels = [
@@ -10,40 +13,42 @@ myApp.controller('MyCtrl1', function($scope) {
 		location : '<i>Delhi</i><script>alert("BOO");</script>',
 		rating: 5,
 		image: 'img/ashok.jpg',
-		reviews: [{
-			author: 'abhinav',
-			comment: 'good one'
-		}]
+		dailyRate : 350
 	},
 	{
 		name: 'Hyatt Regency',
 		lcoation: 'Mumbai',
 		rating: 10,
-		image: 'img/hyatt.jpg'
+		image: 'img/hyatt.jpg',
+		dailyRate : 500
 	},
 	{
 		name: 'Taj Residency',
 		location: 'New Delhi',
 		rating : 3,
-		image: 'img/taj.jpg'
+		image: 'img/taj.jpg',
+		dailyRate : 350
 	},
 	{
 		name: 'Country Inn',
 		lcoation: 'Dubai',
 		rating: 7,
-		image: 'img/countryinn.jpg'
+		image: 'img/countryinn.jpg',
+		dailyRate : 700
 	},
 	{
 		name: 'Royal Orchid',
 		lcoation: 'Bangalore',
 		rating: 2,
-		image: 'img/royalorchid.jpg'
+		image: 'img/royalorchid.jpg',
+		dailyRate : 200
 	},
 	{
 		name: 'Radisson',
 		lcoation: 'Mumbai',
 		rating: 3,
-		image: 'img/radisson.jpg'
+		image: 'img/radisson.jpg',
+		dailyRate : 1000
 	}
 	]
 }

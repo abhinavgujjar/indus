@@ -53,6 +53,8 @@
 
           <div ng-repeat="review in hotel.reviews" class="row">{{review.comment}}</div>
         </div>
+        <div><button ng-click="upVote(hotel)">Up</button></div>
+        <div><button ng-click="downVote(hotel)">down</button></div>
       </div>
 
   <!-- In production use:
