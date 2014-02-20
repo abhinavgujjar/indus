@@ -15,5 +15,11 @@ var myApp = angular.module('myApp', ['ngSanitize', 'ngRoute'])
 		templateUrl: 'templates/newHotel.html',
 		controller: 'EditHotelCtrl'
 	});
+
+	$routeProvider.when('/details/:routeId',
+	{
+		templateUrl: 'templates/hotelDetails.html',
+		controller: 'detailsController'
+	});
 	
 });
