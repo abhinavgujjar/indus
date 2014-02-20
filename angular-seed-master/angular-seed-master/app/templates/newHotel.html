@@ -1,0 +1,18 @@
+ <div class="container">
+  <h1>New Event</h1>
+  <form method="POST" name="newHotelForm">
+    <div class="form-group">
+      <label >Name</label>
+      <input name="hotelName" ng-model="hotel.Name" type="text" required/>
+    </div>
+
+    <div class="form-group">
+      <label >Date Launched</label>
+      <input name="hotel.dateLaunched" ng-model="hotel.dateLaunched" 
+      type="text" ng-pattern="/\d\d/\d\d/\d\d\d\d/"/>
+    </div>
+
+    <input type="submit" ng-disabled="newHotelForm.$invalid" ng-click="saveHotel(hotel, newHotelForm)" value="submit"/>
+  </form>
+  
+</div>

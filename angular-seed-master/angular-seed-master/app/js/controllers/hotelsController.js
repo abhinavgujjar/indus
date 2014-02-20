@@ -7,6 +7,12 @@ myApp.controller('MyCtrl1', function($scope, hotelDataProvider) {
 		hotel.rating--;
 	};
 
-	$scope.hotels = hotelDataProvider.getHotels();
+	$scope.isErrorVisible = false;
+
+	var promise = hotelDataProvider.getHotels();
+
+	promise.then(function(data){
+		$scope.hotels = data;
+	});
 }
 );

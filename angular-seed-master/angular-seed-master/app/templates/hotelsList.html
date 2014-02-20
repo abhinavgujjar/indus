@@ -1,0 +1,55 @@
+ <div class="container">
+
+  <div class="row">
+    <div class="col-md-3">
+      <div class="input-group">
+        <span class="input-group-addon">Search</span>
+        <input type="text" class="form-control" ng-model="searchTerm" placeholder="enter name..." />
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="input-group">
+        <span class="input-group-addon">Order</span>
+        <select  ng-model="orderSelection" class="form-control">
+          <option value='name'>Name</option>
+          <option value='rating'>Rating</option>
+        </select>
+
+      </div>
+    </div>
+    <div class="col-md-6"><a href="#/new" class="btn btn-success pull-right" >New Hotel</a></div>
+  </div>
+  <br/>
+  <hr/>
+
+  <div ng-repeat="hotel in hotels | filter:searchTerm | orderBy:orderSelection: true" class=" row well">
+    <div class="row">
+      <div class="col-md-2" >
+        <div>
+          <button class="btn btn-xs btn-default" ng-click="upVote(hotel)">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+          </button>
+        </div>
+        <div>
+          <h4>
+            <span class="label label-info">{{hotel.rating}}</span>
+          </h4>
+        </div>
+        <div>
+          <button class="btn btn-xs btn-default" ng-click="downVote(hotel)">
+            <span class="glyphicon glyphicon-chevron-down"></span>
+          </button>
+        </div>
+      </div>
+      <div class="col-md-3" >
+        <div><img style="width:200px; height:100px" ng-src="{{hotel.image}}" /></div>
+      </div>
+      <div class="col-md-6" >
+        <div><span class="h3">{{hotel.name }}</span></div>
+        <div>{{hotel.dailyRate | toRupees | categories | uppercase}}</div>
+        <div ng-bind-html="hotel.location"></div>
+
+        <div ng-repeat="review in hotel.reviews" class="row">{{review.comment}}</div>
+      </div>
+    </div>
+  </div>
